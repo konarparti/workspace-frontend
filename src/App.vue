@@ -1,26 +1,25 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <v-app>
+    <AppLayout>
+      <router-view />
+    </AppLayout>
+    <AppPreloader />
+    <!-- <AppAlert /> -->
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import AppLayout from '@/core/ui/layouts/AppLayout.vue';
+import AppPreloader from '@/modules/preloader/ui/components/AppPreloader.vue';
+// import AppAlert from '@/modules/alert/ui/components/AppAlert.vue';
 
 export default {
   name: 'App',
+
   components: {
-    HelloWorld,
+    AppLayout,
+    AppPreloader,
+    // AppAlert,
   },
 };
 </script>
-
-<style>
-#app {
-  margin-top: 60px;
-  color: #2c3e50;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  text-align: center;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-</style>
